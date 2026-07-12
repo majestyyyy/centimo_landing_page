@@ -391,11 +391,11 @@ export default function LandingPage() {
         <div className="relative flex overflow-x-hidden">
           <div className="animate-marquee flex gap-12 items-center py-4 whitespace-nowrap">
             {BANKS.map((bank, index) => (
-              <div key={`bank-1-${index}`} className="flex items-center justify-center w-28 h-8 shrink-0 hover:scale-105 transition-transform cursor-pointer">
+              <div key={`bank-1-${index}`} className="flex items-center justify-center w-36 h-12 shrink-0 hover:scale-105 transition-transform cursor-pointer">
                 <img
                   src={bank.logo}
                   alt={bank.name}
-                  className="max-h-full max-w-full opacity-40 hover:opacity-100 transition-all object-contain filter brightness-0 invert"
+                  className="max-h-full max-w-full opacity-80 hover:opacity-100 transition-all object-contain"
                 />
               </div>
             ))}
@@ -403,11 +403,11 @@ export default function LandingPage() {
           {/* Duplicate for infinite loop */}
           <div className="animate-marquee flex gap-12 items-center py-4 whitespace-nowrap" aria-hidden="true">
             {BANKS.map((bank, index) => (
-              <div key={`bank-2-${index}`} className="flex items-center justify-center w-28 h-8 shrink-0 hover:scale-105 transition-transform cursor-pointer">
+              <div key={`bank-2-${index}`} className="flex items-center justify-center w-36 h-12 shrink-0 hover:scale-105 transition-transform cursor-pointer">
                 <img
                   src={bank.logo}
                   alt={bank.name}
-                  className="max-h-full max-w-full opacity-40 hover:opacity-100 transition-all object-contain filter brightness-0 invert"
+                  className="max-h-full max-w-full opacity-80 hover:opacity-100 transition-all object-contain"
                 />
               </div>
             ))}
