@@ -19,6 +19,34 @@ import {
   Check
 } from 'lucide-react';
 
+const BANKS = [
+  { name: 'GCash', logo: '/banks/gcash.svg' },
+  { name: 'Maya', logo: '/banks/maya.svg' },
+  { name: 'GoTyme', logo: '/banks/gotyme.svg' },
+  { name: 'MariBank', logo: '/banks/maribank.svg' },
+  { name: 'BPI', logo: '/banks/bpi.svg' },
+  { name: 'BDO Unibank', logo: '/banks/bdounibank.svg' },
+  { name: 'UnionBank', logo: '/banks/unionbank.svg' },
+  { name: 'Metrobank', logo: '/banks/metrobank.svg' },
+  { name: 'Security Bank', logo: '/banks/security.svg' },
+  { name: 'RCBC', logo: '/banks/rcbc.svg' },
+  { name: 'CIMB Bank', logo: '/banks/cimb.svg' },
+  { name: 'EastWest Bank', logo: '/banks/eastwest.svg' },
+  { name: 'Landbank', logo: '/banks/landbank.svg' },
+  { name: 'Tonik', logo: '/banks/tonik.svg' },
+  { name: 'UnionDigital', logo: '/banks/uniondigital.svg' },
+  { name: 'UNO Bank', logo: '/banks/uno.svg' },
+  { name: 'Vybe', logo: '/banks/vybe.svg' },
+  { name: 'AUB', logo: '/banks/aub.svg' },
+  { name: 'PNB', logo: '/banks/pnb.svg' },
+  { name: 'DBP', logo: '/banks/dbp.svg' },
+  { name: 'HSBC', logo: '/banks/hsbc.svg' },
+  { name: 'Citibank', logo: '/banks/citibank.svg' },
+  { name: 'PSBank', logo: '/banks/psbank.svg' },
+  { name: 'Bank of Commerce', logo: '/banks/bankofcommerce.svg' },
+  { name: 'China Bank', logo: '/banks/chinabank.svg' }
+];
+
 export default function LandingPage() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'budgets' | 'bnpl' | 'savings'>('dashboard');
 
@@ -350,6 +378,44 @@ export default function LandingPage() {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Bank Logos Ticker Section */}
+      <section className="py-12 bg-[#090b11]/30 border-b border-white/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+            Supported Banks & E-Wallets
+          </p>
+        </div>
+        <div className="relative flex overflow-x-hidden">
+          <div className="animate-marquee flex gap-12 items-center py-4 whitespace-nowrap">
+            {BANKS.map((bank, index) => (
+              <div key={`bank-1-${index}`} className="flex items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+                <img
+                  src={bank.logo}
+                  alt={bank.name}
+                  className="h-7 w-auto opacity-35 hover:opacity-85 transition-opacity object-contain"
+                />
+              </div>
+            ))}
+          </div>
+          {/* Duplicate for infinite loop */}
+          <div className="animate-marquee flex gap-12 items-center py-4 whitespace-nowrap" aria-hidden="true">
+            {BANKS.map((bank, index) => (
+              <div key={`bank-2-${index}`} className="flex items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+                <img
+                  src={bank.logo}
+                  alt={bank.name}
+                  className="h-7 w-auto opacity-35 hover:opacity-85 transition-opacity object-contain"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Fade gradients at edges */}
+          <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-[#07090e] to-transparent pointer-events-none z-10" />
+          <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-[#07090e] to-transparent pointer-events-none z-10" />
         </div>
       </section>
 
